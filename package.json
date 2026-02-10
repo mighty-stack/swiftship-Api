@@ -14,7 +14,8 @@
   "description": "logistic site backend",
   "main": "index.js",
   "scripts": {
-    "test": "hello"
+    "test": "hello",
+    "start": "node index.js"
   },
   "author": "mighty",
   "license": "ISC"
