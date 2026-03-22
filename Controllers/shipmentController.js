@@ -14,7 +14,7 @@ const createShipment = async (req, res) => {
       tracking_id,
     })
 
-    res.json(shipment)
+    res.status(201).json(shipment)
   } catch (err) {
     console.error(err)
     res.status(500).json({ message: "Cannot create shipment" })
@@ -32,12 +32,10 @@ const getCustomerShipments = async (req, res) => {
   }
 }
 
-// 📌 GET /tracking/:id
+// GET /tracking/:id
 const trackShipment = async (req, res) => {
   try {
     const shipment = await Shipment.findById(req.params.id)
-      .populate("customer", "firstname lastname")
-      .populate("driver", "firstname lastname phone")
 
     if (!shipment)
       return res.status(404).json({ message: "Shipment not found" })

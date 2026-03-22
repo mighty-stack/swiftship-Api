@@ -21,9 +21,28 @@ const shipmentSchema = new mongoose.Schema(
     },
 
     pickup_address: { type: String, required: true },
+    pickup_city: { type: String },
+    pickup_state: { type: String },
+
     delivery_address: { type: String, required: true },
+    delivery_city: { type: String },
+  delivery_state: { type: String },
+
+  receiver_name: { type: String },
+  receiver_phone: { type: String },
+
+  package_type: { type: String },
     package_description: { type: String },
     weight: { type: Number },
+
+    price: { type: Number },
+
+  payment_status: {
+    type: String,
+    enum: ["pending","paid"],
+    default: "pending"
+  },
+
 
     status: {
       type: String,

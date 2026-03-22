@@ -21,11 +21,10 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 app.use("/auth", require("./Routes/authRoute"))
-app.use("/shipment", require("./Routes/shipmentRoute"))
+app.use("/shipments", require("./Routes/shipmentRoute"))
 app.use("/customer", require("./Routes/customerRoute"))
 app.use("/drivers", require("./Routes/driverRoute"))
 app.use("/admin", require("./Routes/adminRoute"))
-app.use("/tracking", require("./Routes/trackingRoute")) 
 app.use("/payment", paymentRouter)
 
 

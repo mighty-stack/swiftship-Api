@@ -1,7 +1,7 @@
 const paymentService = require("../payment");
 
 //  Initialize Payment
-initializePayment = async (req, res) => {
+const initializePayment = async (req, res) => {
   try {
     const { email, amount } = req.body;
     const result = await paymentService.initializePayment({ email, amount });
@@ -19,7 +19,7 @@ initializePayment = async (req, res) => {
 };
 
 // Verify Payment
-verifyPayment = async (req, res) => {
+const verifyPayment = async (req, res) => {
   try {
     const { reference } = req.params;
     const result = await paymentService.verifyPayment(reference);
