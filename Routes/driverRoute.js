@@ -5,7 +5,7 @@ const {
   getDriverById,
   updateDriver,
   deleteDriver,
-} = require("../controllers/driverController")
+} = require("../Controllers/driverController")
 const { protect, adminOnly } = require("../Middleware/authMiddleware")
 
 // Only ADMIN should manage drivers
